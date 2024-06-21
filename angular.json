@@ -31,6 +31,9 @@
             "browser": "src/main.ts",
             "outputPath": "dist/demo",
             "scripts": [],
+            "polyfills": [
+              "zone.js"
+            ],
             "styles": [
               "./node_modules/ng-zorro-antd/ng-zorro-antd.min.css",
               "src/global_styles.css"

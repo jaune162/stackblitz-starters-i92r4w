@@ -1,31 +1,24 @@
 <nz-layout class="app-layout">
-  <nz-sider
-    class="menu-sidebar"
+  <nz-sider class="menu-sidebar"
     nzCollapsible
     nzWidth="256px"
     nzBreakpoint="md"
     [(nzCollapsed)]="isCollapsed"
-    [nzTrigger]="null"
-  >
+    [nzTrigger]="null">
     <div class="sidebar-logo">
       <a href="https://ng.ant.design/" target="_blank">
-        <img src="https://ng.ant.design/assets/img/logo.svg" alt="logo" />
+        <img src="https://ng.ant.design/assets/img/logo.svg" alt="logo">
         <h1>Ant Design Of Angular</h1>
       </a>
     </div>
-    <ul
-      nz-menu
-      nzTheme="dark"
-      nzMode="inline"
-      [nzInlineCollapsed]="isCollapsed"
-    >
+    <ul nz-menu nzTheme="dark" nzMode="inline" [nzInlineCollapsed]="isCollapsed">
       <li nz-submenu nzOpen nzTitle="Dashboard" nzIcon="dashboard">
         <ul>
           <li nz-menu-item nzMatchRouter>
             <a routerLink="/welcome">Welcome</a>
           </li>
           <li nz-menu-item nzMatchRouter>
-            <a>Monitor</a>
+            <a routerLink="/tabs/page1">Tab1</a>
           </li>
           <li nz-menu-item nzMatchRouter>
             <a>Workplace</a>
@@ -45,25 +38,24 @@
     <nz-header>
       <div class="app-header">
         <span class="header-trigger" (click)="isCollapsed = !isCollapsed">
-          <span
-            class="trigger"
-            nz-icon
-            [nzType]="isCollapsed ? 'menu-unfold' : 'menu-fold'"
-          ></span>
+            <span class="trigger"
+               nz-icon
+               [nzType]="isCollapsed ? 'menu-unfold' : 'menu-fold'"
+            ></span>
         </span>
       </div>
     </nz-header>
     <nz-content>
       <div class="inner-content">
-        <div class="router-tabs">
-          <!-- <nz-tabset nzLinkRouter nzType="editable-card" nzHideAdd [nzAnimated]="true" (nzClose)="closeTab($event)" [(nzSelectedIndex)]="selectedTabIndex">
-            <nz-tab *ngFor="let item of tabs" [nzClosable]="item.closable">
-              <a *nzTabLink nz-tab-link [routerLink]="[item.routerLink]" [queryParams]="item.queryParams" queryParamsHandling="merge">
-                {{ item.name }}
-              </a>
-            </nz-tab>
-          </nz-tabset> -->
-        </div>
+          <div class="router-tabs">
+              <nz-tabset nzLinkRouter nzType="editable-card" nzHideAdd [nzAnimated]="true" (nzClose)="closeTab($event)" [(nzSelectedIndex)]="selectedTabIndex">
+                  <nz-tab *ngFor="let item of tabs" [nzClosable]="item.closable">
+                      <a *nzTabLink nz-tab-link [routerLink]="[item.routerLink]" [queryParams]="item.queryParams" queryParamsHandling="merge">
+                          {{ item.name }}
+                      </a>
+                  </nz-tab>
+              </nz-tabset>
+          </div>
         <router-outlet></router-outlet>
       </div>
     </nz-content>
